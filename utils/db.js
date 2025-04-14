@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+
+dotenv.config();
 
 //export a function that connect to db
  const db = () =>{
@@ -9,12 +10,12 @@ dotenv.config()
 
 
     //if it connects successsfully it will go in than otherwise it will go in catch which will cause error
-.than(() => {
+.then(() => {
     console.log("connected to mongodb")
 })
 .catch((err)=> {
-    console.log("error conecting to mongodb")
+    console.log("error conecting to mongodb", err);
 })
- }
+}
 
  export default db;
